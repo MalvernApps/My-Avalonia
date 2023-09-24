@@ -6,6 +6,7 @@ using System.Windows.Input;
 using System.Xml;
 using System.Runtime.CompilerServices;
 using ReactiveUI;
+using System.Reflection;
 
 namespace Avalonia.Ribbon.Samples.ViewModels
 {
@@ -27,6 +28,26 @@ namespace Avalonia.Ribbon.Samples.ViewModels
             LastActionText = paramString;
 
             LetsTryXML();
+        }
+
+        public void LetsTryReflection()
+        {
+
+        }
+
+        /// <summary>
+        /// refer:: https://stackoverflow.com/questions/15234236/reflection-on-list-and-printing-values
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Object"></param>
+
+        void printReturnedProperties<T>(T Object)
+        {
+            PropertyInfo[] propertyInfos = null;
+            propertyInfos = Object.GetType().GetProperties();
+
+            foreach (var item in propertyInfos)
+                Console.WriteLine(item.Name + ": " + item.GetValue(Object).ToString());
         }
 
         /// <summary>
