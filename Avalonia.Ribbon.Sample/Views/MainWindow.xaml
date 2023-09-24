@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:Avalonia.Ribbon.Samples.ViewModels;assembly=Avalonia.Ribbon.Sample"
     xmlns:ribbon="clr-namespace:Avalonia.Controls.Ribbon;assembly=Avalonia.Controls.Ribbon"
+	xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid"
     Title="Glenns Example Avalonia Ribbon"
     d:DesignWidth="620"
     d:DesignHeight="500"
@@ -455,8 +456,14 @@
 				<TabItem Header="General">
 					<TextBlock>Glenn WAZ here</TextBlock>			
 				</TabItem>
-				<TabItem Header="Security" />
-				<TabItem Header="Details" />
+				<TabItem Header="Security">
+					<StackPanel>
+						<Button>Hello world</Button>
+						
+					</StackPanel>
+				
+					</TabItem>
+					<TabItem Header="Details" />
 			</TabControl>
 			
         </StackPanel>
