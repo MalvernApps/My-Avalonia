@@ -31,6 +31,10 @@ namespace Avalonia.Ribbon.Samples.ViewModels
             tryxml2 ();
         }
 
+        /// <summary>
+        /// XML from: https://www.w3schools.com/xml/simple.xml
+        /// </summary>
+
         public void tryxml2()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(breakfast_menu));
