@@ -35,7 +35,11 @@ namespace Avalonia.Ribbon.Samples.ViewModels
         {
             XmlSerializer serializer = new XmlSerializer(typeof(breakfast_menu));
 
-            FileStream fs = new FileStream(@"C:\\Users\\Glenn\\Documents\\avalonia\\food\\food.xml", FileMode.Open);
+            //FileStream fs = new FileStream(@"C:\\Users\\Glenn\\Documents\\avalonia\\food\\food.xml", FileMode.Open);
+            Console.WriteLine( Directory.GetCurrentDirectory() );
+
+            string dir = Directory.GetCurrentDirectory() + "\\Assets\\XML\\food.xml";
+            FileStream fs = new FileStream( dir, FileMode.Open);
             //Declares an object variable of the type to be deserialized.
             breakfast_menu po;
             //Uses the Deserialize method to restore the object's state

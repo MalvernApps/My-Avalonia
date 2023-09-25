@@ -20,13 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Remove="Assets\XML\books.xml" />
+    <AvaloniaResource Remove="Assets\XML\food.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Assets\XML\books.xml" />
+    <None Remove="Assets\XML\food.xml" />
     <None Remove="books.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\XML\books.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\XML\food.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="books.xml">
