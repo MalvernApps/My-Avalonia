@@ -7,6 +7,7 @@ using System.Xml;
 using System.Runtime.CompilerServices;
 using ReactiveUI;
 using System.Reflection;
+using System.Xml.Serialization;
 
 namespace Avalonia.Ribbon.Samples.ViewModels
 {
@@ -27,7 +28,19 @@ namespace Avalonia.Ribbon.Samples.ViewModels
             Console.WriteLine("OnClickCommand invoked: " + paramString);
             LastActionText = paramString;
 
-            LetsTryXML();
+            tryxml2 ();
+        }
+
+        public void tryxml2()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(breakfast_menu));
+
+            FileStream fs = new FileStream(@"C:\\Users\\Glenn\\Documents\\avalonia\\food\\food.xml", FileMode.Open);
+            //Declares an object variable of the type to be deserialized.
+            breakfast_menu po;
+            //Uses the Deserialize method to restore the object's state
+            //with data from the XML document. */
+            po = (breakfast_menu)serializer.Deserialize(fs);
         }
 
         public void LetsTryReflection()
